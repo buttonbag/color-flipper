@@ -8,10 +8,10 @@ const color = selector('.color');
 
 btn.addEventListener('click', () => {
     // get random number between 0 - 3
-    const randomNumber = getRandomNum();
+    const randomNumber = getRandomNum(colors.length);
     console.log(randomNumber);
     document.body.style.backgroundColor = colors[randomNumber];
     color.textContent = colors[randomNumber];
 });
 
-let getRandomNum = () => Math.floor(Math.random(3) * colors.length);
+let getRandomNum = (num) => Math.floor(Math.random(num) * colors.length);
