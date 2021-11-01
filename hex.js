@@ -7,11 +7,13 @@ const color = selector('.color');
 
 
 btn.addEventListener('click', () => {
-    // get random number between 0 - 3
-    const randomNumber = getRandomNum(3);
-    console.log(randomNumber);
-    document.body.style.backgroundColor = hex[randomNumber];
-    color.textContent = hex[randomNumber];
+    let hexColor = '#';
+    for (let i = 0; i < 6; i++) {
+        hexColor += hex[getRandomNum()];
+    }
+
+    document.body.style.backgroundColor = hexColor;
+    color.textContent = hexColor;
 });
 
-let getRandomNum = () => Math.floor(Math.random(3) * hex.length);
+const getRandomNum = () => Math.floor(Math.random() * hex.length);
